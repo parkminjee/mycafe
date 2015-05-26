@@ -21,5 +21,6 @@
 	<sqlMap resource="sql/member.xml" />
 	<sqlMap resource="sql/menu.xml" />
 	<sqlMap resource="sql/board.xml" />
+	<sqlMap resource="sql/order.xml" />
 
 </sqlMapConfig>

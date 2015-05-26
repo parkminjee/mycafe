@@ -1,6 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,39 +13,26 @@
 			<c:import url="/WEB-INF/views/include/header.jsp" />
 		</div>
 		<div id="content">
-			<div id="board" class="board-form">
+			<div id="board">
 				<table class="tbl-ex">
 					<tr>
-						<th colspan="2">글보기</th>
+						<th>상품명</th>
+						<th>가격</th>
+						<th>우선순위</th>
+						<th>&nbsp;</th>
 					</tr>
+					<c:forEach items="${list }" var = "vo" >				
 					<tr>
-						<td class="label">상품명</td>
-						<td>${view.name }</td>
+						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
+						<td>${vo.price }</td>
+						<td>${vo.orderno }</td>
+						<td><a href="/mycafe/menu/delete?no=${vo.no }" class="del">상품삭제</a></td>
 					</tr>
-					<tr>
-						<td class="label">가격</td>
-						<td>
-							<div class="view-content">
-							${view.price} 
-								</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="label">설명</td>
-						<td>${view.content }</td>
-					</tr>
-					<tr>
-						<td class="label">우선순위</td>
-						<td>${view.orderno }</td>
-					</tr>
-					
+					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<a href="/mycafe/menu/index">상품목록</a>
-					<c:if test="${vo.member_no==authMember.no }">
-						<a href="/mycafe/menu/update?no=${view.no }">상품수정</a>
-					</c:if>
-				</div>
+					<a href="/mycafe/menu/write" id="new-book">상품추가</a>
+				</div>				
 			</div>
 		</div>
 		<div id="navigation">
