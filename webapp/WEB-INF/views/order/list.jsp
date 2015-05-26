@@ -18,8 +18,8 @@
 					<tr>
 						<th>상품명</th>
 						<th>가격</th>
-						<th>우선순위</th>
-						<th>&nbsp;</th>
+						<th>수량 조절</th>
+						<th>수량</th>
 					</tr>
 					<c:forEach items="${list }" var = "vo" >				
 					<tr>
@@ -31,7 +31,8 @@
 					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<a href="/mycafe/menu/write" id="new-book">상품추가</a>
+					<a href="/mycafe/order/buy" id="new-book"> 주문하기 </a>
+					<a href="/mycafe/order/index" id="new-book"> 주문초기화 </a>
 				</div>				
 			</div>
 		</div>
