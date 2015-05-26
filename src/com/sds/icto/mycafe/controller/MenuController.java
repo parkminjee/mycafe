@@ -27,19 +27,42 @@ public class MenuController {
 		model.addAttribute("list",list);
 		return "menu/list";
 	}
-	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String viewForm(@RequestParam int no, Model model)
+	{
+		MenuVo view = menuService.view(no);
+		model.addAttribute("view",view);
+		return "menu/view";
+	}
 	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String writeForm()
 	{
 		return "menu/write";
 	}
-	
-	/*@RequestMapping(value="/write", method=RequestMethod.POST)
+	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(@ModelAttribute MenuVo vo)
 	{
 		menuService.insert(vo);
 		return "redirect:/menu/index";
-	}	*/
-	
+	}	
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String delete(@ModelAttribute MenuVo vo)
+	{
+		menuService.delete(vo);
+		return "redirect:/menu/index";
+	}
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	public String updateForm(@ModelAttribute MenuVo vo, @RequestParam int no, Model model)
+	{
+		MenuVo menu = menuService.view(no);
+		model.addAttribute("update",menu);
+		return "menu/modify";
+	}	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(@ModelAttribute MenuVo vo)
+	{
+		menuService.update(vo);
+		return "redirect:/menu/index";
+	}
 
 }

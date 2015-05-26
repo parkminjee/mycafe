@@ -21,23 +21,29 @@ public class MenuDao {
 		vo1 = (MenuVo) sqlMapClientTemplate.queryForObject("menu.view",no);
 						
 		return vo1;
-	}
+	}*/
+	
 	public void update ( MenuVo vo)
 	{
 		sqlMapClientTemplate.update("menu.update",vo);
 	}
-
 	
 	public void delete(MenuVo vo)
 	{
 		sqlMapClientTemplate.delete("menu.delete",vo);
-	}*/
+	}
 	
 	public List<MenuVo> fetch() 
 	{
 		List<MenuVo> list = new ArrayList<MenuVo>();
 		list = sqlMapClientTemplate.queryForList("menu.list");
 		return list;
+	}
+	
+	public MenuVo view(int no) 
+	{
+		MenuVo vo = (MenuVo)sqlMapClientTemplate.queryForObject("menu.view",no);
+		return vo;
 	}
 	
 	public void insert ( MenuVo vo)

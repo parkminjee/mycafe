@@ -33,4 +33,12 @@
 		]]>  
 	</select>
 	
+	<select id="view" resultClass="MenuVo" parameterClass = "java.lang.Integer">
+		<![CDATA[
+		SELECT * 
+		FROM product
+		WHERE no = #value#
+		]]>  
+	</select>
+	
 </sqlMap> 

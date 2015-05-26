@@ -14,10 +14,6 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form id="search_form" action="/mycafe/board/find" method="post">
-					<input type="text" id="kwd" name="kwd" value="">
-					<input type="submit" value="찾기">
-				</form>
 				<table class="tbl-ex">
 					<tr>
 						<th>상품명</th>
@@ -27,17 +23,15 @@
 					</tr>
 					<c:forEach items="${list }" var = "vo" >				
 					<tr>
-						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.name }</a></td>
+						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
 						<td>${vo.price }</td>
 						<td>${vo.orderno }</td>
-						<td><a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a></td>
+						<td><a href="/mycafe/menu/delete?no=${vo.no }" class="del">상품삭제</a></td>
 					</tr>
 					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<%-- <c:if test = "${not empty authMember.no }">
-						<a href="/mycafe/menu/write" id="new-book">글쓰기</a>
-					</c:if> --%>
+					<a href="/mycafe/menu/write" id="new-book">상품추가</a>
 				</div>				
 			</div>
 		</div>

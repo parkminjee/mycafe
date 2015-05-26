@@ -5,7 +5,7 @@
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="/mysite3/assets/css/board.css" rel="stylesheet" type="text/css">
+<link href="/mycafe/assets/css/board.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -20,17 +20,22 @@
 							<th colspan="2">글수정</th>
 						</tr>
 						<tr>
-							<td class="label">제목</td>
-							<td><input type="text" name="title" value="${vo.title }"></td>
+							<td class="label">상품명</td>
+							<td><input type="text" name="name" value="${update.name }"></td>
 						</tr>
 						<tr>
-							<td class="label">내용</td>
-							<td>
-								<textarea id="content" name="content">
-									${vo.content }
-								</textarea>
-							</td>
+							<td class="label">가격</td>
+							<td><input type="text" name="price" value="${update.price }"></td>
 						</tr>
+						<tr>
+							<td class="label">설명</td>
+							<td><input type="text" name="content" value="${update.content }"></td>
+						</tr>
+						<tr>
+							<td class="label">우선순위</td>
+							<td><input type="text" name="orderno" value="${update.orderno }"></td>
+						</tr>
+					
 					</table>
 					<div class="bottom">
 						<a href="/mysite3/board/view?no=${vo.no }">취소</a>
