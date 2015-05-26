@@ -1,9 +1,8 @@
 package com.sds.icto.mycafe.repository;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class MemberDao {
 	
-	public static void main(String[] args) {
-		System.out.println("hi");
-	}
-
 }
