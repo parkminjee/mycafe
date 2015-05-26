@@ -12,4 +12,11 @@ public class MenuController {
 	{
 		return "menu/list";
 	}
+	@RequestMapping("/insert")
+	public String insert()
+	{
+		return "";
+	}
+	
+
 }
