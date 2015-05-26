@@ -22,8 +22,6 @@
 						커피니입니다.<br>
 						커피 드시고 가세요.<br><br>
 						아 솔직히 장사 힘드네요<br>
-						
-						<a href="/mycafe/guestbook/index">방명록</a>에 글 남기기<br>
 					</p>
 				</div>
 			</div>

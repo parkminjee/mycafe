@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>mysite</title>
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/mycafe/assets/css/board.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,22 +17,31 @@
 			<div id="board">
 				<table class="tbl-ex">
 					<tr>
+						<td> 주문결과 </td>
+					</tr>
+					<tr>
 						<th>상품명</th>
 						<th>가격</th>
-						<th>우선순위</th>
-						<th>&nbsp;</th>
+						<th>수량</th>
+						<th>합계</th>
 					</tr>
-					<c:forEach items="${list }" var = "vo" >				
+					<c:forEach items="${list }" var = "vo" >
 					<tr>
-						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
-						<td>${vo.price }</td>
-						<td>${vo.orderno }</td>
-						<td><a href="/mycafe/menu/delete?no=${vo.no }" class="del">상품삭제</a></td>
+						<c:if test="${vo.quantity>0 }">
+							<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
+							<td>${vo.price }원</td>
+							<td>${vo.quantity }잔</td>
+							<td>${vo.price * vo.quantity }원</a></td>
+						</c:if>
 					</tr>
-					</c:forEach>										
+					</c:forEach>
+					<tr>
+						<td> 총합 : </td>
+					</tr>										
 				</table>
 				<div class="bottom">
-					<a href="/mycafe/menu/write" id="new-book">상품추가</a>
+					<a href="/mycafe/order/ultorder" id="new-book"> 최종결제 </a>
+					<a href="/mycafe/order/reorder" id="new-book"> 주문다시하기 </a>
 				</div>				
 			</div>
 		</div>

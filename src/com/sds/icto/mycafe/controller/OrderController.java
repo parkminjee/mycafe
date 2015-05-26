@@ -38,17 +38,29 @@ public class OrderController {
 		orderService.refresh();
 		return "redirect:/order/index";
 	}
-	@RequestMapping("/buy")
-	public String buy()
+	@RequestMapping("/reorder")
+	public String reorder()
+	{
+		return "redirect:/order/index";
+	}
+	@RequestMapping("/ultorder")
+	public String ultorder()
 	{
 		orderService.refresh();
-		return "redirect:/order/index";
+		return "redirect:/index";
+	}
+	@RequestMapping("/buy")
+	public String buy(Model model)
+	{
+		List<OrderVo> list = orderService.list();
+		model.addAttribute("list",list);
+		/*orderService.refresh();*/
+		return "order/result";
 	}
 	
 	@RequestMapping(value="/plus", method=RequestMethod.GET)
 	public String plus(@RequestParam int no, Model model)
 	{
-		System.out.println(no);
 		OrderVo vo = orderService.view(no);
 		orderService.plus(vo);
 					
@@ -57,7 +69,6 @@ public class OrderController {
 	@RequestMapping(value="/minus", method=RequestMethod.GET)
 	public String minus(@RequestParam int no, Model model)
 	{
-		System.out.println(no);
 		OrderVo vo = orderService.view(no);
 		orderService.minus(vo);
 			
