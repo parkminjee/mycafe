@@ -16,15 +16,11 @@ public class MenuService {
 	public List<MenuVo> list(){
 		return menuDao.fetch(); 
 	}
-	public MenuVo view(int no)
-	{
-		return menuDao.getView(no);
-	}
-	public void insert(MenuVo vo)
+	/*public void insert(MenuVo vo)
 	{
 		menuDao.insert(vo);
-	}
-	public void delete(MenuVo vo)
+	}*/
+	/*public void delete(MenuVo vo)
 	{
 		menuDao.delete(vo);
 	}
@@ -32,5 +28,5 @@ public class MenuService {
 	{
 		menuDao.update(vo);
 	}
-	
+	*/
 }

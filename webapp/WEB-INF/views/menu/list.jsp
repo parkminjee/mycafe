@@ -20,32 +20,24 @@
 				</form>
 				<table class="tbl-ex">
 					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>조회수</th>
-						<th>작성일</th>
+						<th>상품명</th>
+						<th>가격</th>
+						<th>우선순위</th>
 						<th>&nbsp;</th>
 					</tr>
 					<c:forEach items="${list }" var = "vo" >				
 					<tr>
-						<td>${vo.no }</td>
-						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.title }</a></td>
-						<td>${vo.member_name }</td>
-						<td>${vo.view_cnt }</td>
-						<td>${vo.reg_date }</td>
-						<td>
-							<c:if test = "${vo.member_no==authMember.no }">
-								<a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a>
-							</c:if>
-						</td>
+						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.name }</a></td>
+						<td>${vo.price }</td>
+						<td>${vo.orderno }</td>
+						<td><a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a></td>
 					</tr>
 					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<c:if test = "${not empty authMember.no }">
-						<a href="/mysite3/board/write" id="new-book">글쓰기</a>
-					</c:if>
+					<%-- <c:if test = "${not empty authMember.no }">
+						<a href="/mycafe/menu/write" id="new-book">글쓰기</a>
+					</c:if> --%>
 				</div>				
 			</div>
 		</div>

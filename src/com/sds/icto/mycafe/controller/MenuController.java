@@ -2,8 +2,6 @@ package com.sds.icto.mycafe.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,16 +34,12 @@ public class MenuController {
 		return "menu/write";
 	}
 	
-	@RequestMapping(value="/write", method=RequestMethod.POST)
-	public String write(@ModelAttribute MenuVo vo, HttpSession session)
+	/*@RequestMapping(value="/write", method=RequestMethod.POST)
+	public String write(@ModelAttribute MenuVo vo)
 	{
-		MenuVo menu_vo = (MenuVo)session.getAttribute("authMember");
-		vo.setNo(menu_vo.getNo());
-		vo.setName(menu_vo.getName());
-		
 		menuService.insert(vo);
-		return "redirect:/board/index";
-	}	
+		return "redirect:/menu/index";
+	}	*/
 	
 
 }

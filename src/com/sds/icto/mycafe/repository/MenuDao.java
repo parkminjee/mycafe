@@ -15,7 +15,7 @@ public class MenuDao {
 	@Autowired
 	SqlMapClientTemplate sqlMapClientTemplate;
 		
-	public MenuVo getView( int no ) 
+/*	public MenuVo getView( int no ) 
 	{
 		MenuVo vo1 = new MenuVo();
 		vo1 = (MenuVo) sqlMapClientTemplate.queryForObject("menu.view",no);
@@ -31,25 +31,21 @@ public class MenuDao {
 	public void delete(MenuVo vo)
 	{
 		sqlMapClientTemplate.delete("menu.delete",vo);
-	}
+	}*/
 	
 	public List<MenuVo> fetch() 
 	{
 		List<MenuVo> list = new ArrayList<MenuVo>();
 		list = sqlMapClientTemplate.queryForList("menu.list");
 		return list;
-
 	}
 	
 	public void insert ( MenuVo vo)
 	{
-		sqlMapClientTemplate.insert("menu.write",vo);
+		sqlMapClientTemplate.insert("menu.insert",vo);
 	}
 	
-	public void cntupdate(MenuVo vo)
-	{
-		sqlMapClientTemplate.update("menu.updatecnt",vo);
-	}
+	
 
 	
 }
