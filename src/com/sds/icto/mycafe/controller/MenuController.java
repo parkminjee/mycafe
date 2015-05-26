@@ -10,13 +10,18 @@ public class MenuController {
 	@RequestMapping("/list")
 	public String index()
 	{
+		
 		return "menu/list";
+	}
+	@RequestMapping("/insert")
+	public String insertForm()
+	{
+		return "";
 	}
 	@RequestMapping("/insert")
 	public String insert()
 	{
 		return "";
 	}
-	
 
 }

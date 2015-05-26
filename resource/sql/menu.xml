@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="menu">
+	<typeAlias alias="MenuVo" type="com.sds.icto.mycafe.domain.MenuVo" />
+		
+	<insert id="insert" parameterClass="MenuVo">
+		<![CDATA[
+		INSERT into product
+		VALUES(product_no_seq.nextval,#name#,#price#,#content#,#orderno#)
+		]]>  
+	</insert>
+	
+	<delete id="delete" parameterClass="MenuVo">
+		<![CDATA[
+		DELETE 
+		FROM product
+		WHERE no=#no#
+		]]>  
+	</delete>
+	
+	<update id="update" parameterClass="MenuVo">
+		<![CDATA[
+		UPDATE product
+		SET name = #name#, price = #price#, content = #content#, orderno = #orderno#
+		WHERE no = #no#
+		]]>  
+	</update>
+
+	<select id="list" resultClass="MenuVo">
+		<![CDATA[
+		SELECT * 
+		FROM product
+		]]>  
+	</select>
+	
+</sqlMap> 
