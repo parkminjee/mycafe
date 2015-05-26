@@ -30,13 +30,13 @@
 					<c:forEach items="${list }" var = "vo" >				
 					<tr>
 						<td>${vo.no }</td>
-						<td><a href="/mysite3/board/view?no=${vo.no }">${vo.title }</a></td>
+						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.title }</a></td>
 						<td>${vo.member_name }</td>
-						<td>${vo.view_cnt }</td>
-						<td>${vo.reg_date }</td>
+						<td>${vo.viewcnt }</td>
+						<td>${vo.regdate }</td>
 						<td>
 							<c:if test = "${vo.member_no==authMember.no }">
-								<a href="/mysite3/board/delete?no=${vo.no }" class="del">삭제</a>
+								<a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>
 					</tr>

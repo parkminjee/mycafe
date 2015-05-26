@@ -9,6 +9,8 @@ public class BoardVo {
 	private String member_name;
 	private int viewcnt;
 	private String regdate;
+	
+	
 	public int getNo() {
 		return no;
 	}

@@ -20,5 +20,6 @@
 	<!-- sql mapping fiels -->
 	<sqlMap resource="sql/member.xml" />
 	<sqlMap resource="sql/menu.xml" />
+	<sqlMap resource="sql/board.xml" />
 
 </sqlMapConfig>

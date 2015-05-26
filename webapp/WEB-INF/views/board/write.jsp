@@ -5,7 +5,7 @@
 <head>
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link href="/mysite3/assets/css/board.css" rel="stylesheet" type="text/css">
+<link href="/mycafe/assets/css/board.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
@@ -14,7 +14,7 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite3/board/write">
+				<form class="board-form" method="post" action="/mycafe/board/write">
 					<%-- <input type = "hidden" name = "member_name" value="${authMember.name }">
 					<input type = "hidden" name = "member_no" value="${authMember.no }"> --%>
 					<table class="tbl-ex">
@@ -33,7 +33,7 @@
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="/mysite3/board/index">취소</a>
+						<a href="/mycafe/board/index">취소</a>
 						<input type="submit" value="등록">
 					</div>
 				</form>				
