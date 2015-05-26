@@ -37,17 +37,17 @@
 	</bean>
 
 
-	<!--ibatis SqlMapClientFactoryBean 
+	<!--ibatis SqlMapClientFactoryBean -->
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="dataSource" ref="oracleDatasource" />
 		<property name="configLocation" value="classpath:SqlMapConfig.xml" />
 	</bean>
--->
-	<!--ibatis SqlMapClientTemplate 
+
+	<!--ibatis SqlMapClientTemplate -->
 	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
 		<property name="sqlMapClient" ref="sqlMapClient" />
 	</bean>
--->
+
 
 
 
