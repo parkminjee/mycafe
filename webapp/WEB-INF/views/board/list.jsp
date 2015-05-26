@@ -31,7 +31,7 @@
 					<tr>
 						<td>${vo.no }</td>
 						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.title }</a></td>
-						<td>${authMember.name }</td>
+						<td>${vo.member_name }</td>
 						<td>${vo.viewcnt }</td>
 						<td>${vo.regdate }</td>
 						<td>

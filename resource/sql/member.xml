@@ -23,6 +23,8 @@
 		<![CDATA[
 		SELECT * FROM MEMBER where email=#email# and password =#password#
 		]]>  
+		
+
 	</select>
 	
 </sqlMap> 
