@@ -2,16 +2,16 @@ package com.sds.icto.mycafe.domain;
 
 public class MemberVo {
 
-	private long no;
+	private int no;
 	private String name;
 	private String email;
 	private String pass;
 	private String joindate;
 	
-	public long getNo() {
+	public int getNo() {
 		return no;
 	}
-	public void setNo(long no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 	public String getName() {
