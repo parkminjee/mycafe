@@ -5,7 +5,7 @@ public class MemberVo {
 	private int no;
 	private String name;
 	private String email;
-	private String pass;
+	private String password;
 	private String joindate;
 	
 	public int getNo() {
@@ -27,10 +27,10 @@ public class MemberVo {
 		this.email = email;
 	}
 	public String getPass() {
-		return pass;
+		return password;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPass(String password) {
+		this.password = password;
 	}
 	public String getJoindate() {
 		return joindate;

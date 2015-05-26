@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="board">
+	<typeAlias alias="BoardVo" type="com.sds.icto.mycafe.domain.BoardVo" />
+
+
+	<delete id="delete" parameterClass="BoardVo">
+		<![CDATA[
+			DELETE FROM board
+			WHERE no=#no# AND member_no=#member_no#
+		]]>  
+	</delete>
+	
+	<update id="update" parameterClass="BoardVo">
+		<![CDATA[
+			UPDATE board SET title=#title#, content=#content# WHERE no = #no#
+		]]>  	
+	</update>
+	
+	<update id="updatecnt" parameterClass="BoardVo">
+		<![CDATA[
+			UPDATE board SET viewcnt=#viewcnt#+1 WHERE no = #no#
+		]]>  	
+	</update>
+		
+	<insert id="write" parameterClass="BoardVo">
+	
+		<selectKey keyProperty="no" resultClass="java.lang.Long">
+			<![CDATA[
+				select board_no_seq.nextval as no from dual
+			]]>
+		</selectKey>
+	
+		<![CDATA[
+			INSERT into board
+			VALUES (board_no_seq.nextval,#title#,#content#,#member_no#,#member_name#,0,sysdate)
+				
+		]]>  
+	</insert>
+	
+ 	<resultMap class="BoardVo" id="resultMapList">
+		<result column="no" property="no"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="member_no" property="member_no"/>
+		<result column="member_name" property="member_name"/>
+		<result column="viewcnt" property="viewcnt"/>
+		<result column="regdate" property="regdate"/>
+	</resultMap>
+
+	<select id="list" resultMap="resultMapList">
+		<![CDATA[
+		select *
+		  from board
+		]]>  
+	</select>
+	
+	<select id="view" resultClass="BoardVo" parameterClass ="java.lang.Long">
+		<![CDATA[
+			SELECT *
+			FROM board
+			WHERE no = #value# 
+		]]>  
+	</select>
+ 
+	<select id="find" resultClass="BoardVo" parameterClass ="java.lang.String">
+		<![CDATA[
+			SELECT *
+			FROM board
+			WHERE title LIKE #title#
+			OR member_name LIKE #value#
+		]]>  
+	</select>
+
+</sqlMap> 
