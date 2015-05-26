@@ -59,9 +59,11 @@ public class MenuController {
 		return "menu/modify";
 	}	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public String update(@ModelAttribute MenuVo vo)
+	public String update(@ModelAttribute MenuVo vo, @RequestParam int no)
 	{
+		vo.setNo(no);
 		menuService.update(vo);
+		
 		return "redirect:/menu/index";
 	}
 
