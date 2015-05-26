@@ -14,26 +14,26 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite3/board/update?no=${vo.no }">
+				<form class="board-form" method="post" action="/mycafe/board/modify?no=${param.no }">
 					<table class="tbl-ex">
 						<tr>
 							<th colspan="2">글수정</th>
 						</tr>
 						<tr>
 							<td class="label">제목</td>
-							<td><input type="text" name="title" value="${vo.title }"></td>
+							<td><input type="text" name="title" value="${modify.title }"></td>
 						</tr>
 						<tr>
 							<td class="label">내용</td>
 							<td>
 								<textarea id="content" name="content">
-									${vo.content }
+									${modify.content }
 								</textarea>
 							</td>
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="/mysite3/board/view?no=${vo.no }">취소</a>
+						<a href="/mycafe/board/view?no=${param.no }">취소</a>
 						<input type="submit" value="수정">
 					</div>
 				</form>				

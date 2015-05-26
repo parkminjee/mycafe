@@ -14,7 +14,7 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form id="search_form" action="/mycafe/board/find" method="post">
+				<form id="search_form" action="/mycafe/board/search" method="post">
 					<input type="text" id="kwd" name="kwd" value="">
 					<input type="submit" value="찾기">
 				</form>
@@ -31,11 +31,11 @@
 					<tr>
 						<td>${vo.no }</td>
 						<td><a href="/mycafe/board/view?no=${vo.no }">${vo.title }</a></td>
-						<td>${vo.member_name }</td>
+						<td>${authMember.name }</td>
 						<td>${vo.viewcnt }</td>
 						<td>${vo.regdate }</td>
 						<td>
-							<c:if test = "${vo.member_no==authMember.no }">
+							<c:if test = "${!empty authMember.no }">
 								<a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>

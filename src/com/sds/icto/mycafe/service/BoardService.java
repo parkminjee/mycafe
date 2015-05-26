@@ -18,6 +18,10 @@ public class BoardService {
 
 		return boardDao.fetchList();
 	}
+	
+	public void viewcnt(BoardVo vo){
+		boardDao.cntupdate(vo);
+	}
 
 	public BoardVo view(int no) {
 
@@ -40,7 +44,7 @@ public class BoardService {
 		boardDao.cntupdate(vo);
 	}
 
-	public List<BoardVo> find(String kwd) {
+	public List<BoardVo> search(String kwd) {
 		return boardDao.fetchkey(kwd);
 	}
 }

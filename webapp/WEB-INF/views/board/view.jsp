@@ -34,8 +34,8 @@
 				</table>
 				<div class="bottom">
 					<a href="/mycafe/board/list">글목록</a>
-					<c:if test="${view.member_no==authMember.no }">
-						<a href="/mycafe/board/update?no=${view.no }">글수정</a>
+					<c:if test="${!empty authMember.no }">
+						<a href="/mycafe/board/modify?no=${view.no }">글수정</a>
 					</c:if>
 				</div>
 			</div>
