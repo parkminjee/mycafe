@@ -43,9 +43,7 @@
 				</table>
 				<div class="bottom">
 					<a href="/mycafe/menu/index">상품목록</a>
-					<c:if test="${vo.member_no==authMember.no }">
-						<a href="/mycafe/menu/update?no=${view.no }">상품수정</a>
-					</c:if>
+					<a href="/mycafe/menu/update?no=${view.no }">상품수정</a>
 				</div>
 			</div>
 		</div>

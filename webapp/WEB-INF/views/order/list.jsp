@@ -17,6 +17,9 @@
 			<div id="board">
 				<table class="tbl-ex">
 					<tr>
+						<td> 메뉴 </td>
+					</tr>
+					<tr>
 						<th>상품명</th>
 						<th>가격</th>
 						<th>수량</th>
@@ -27,8 +30,8 @@
 					<c:forEach items="${list }" var = "vo" >
 					<tr>
 						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
-						<td>${vo.price }</td>
-						<td>${vo.quantity }</td>
+						<td>${vo.price }원</td>
+						<td>${vo.quantity }잔</td>
 						<td><a href="/mycafe/order/plus?no=${vo.no }" >더하기</a></td>
 						<td><a href="/mycafe/order/minus?no=${vo.no }">빼기</a></td>
 						<td>${vo.price * vo.quantity }원</a></td>
