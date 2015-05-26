@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="board">
+	<typeAlias alias="BoardVo" type="com.sds.icto.mysite.domain.BoardVo" />
+	
+
+	<insert id="insert" parameterClass="BoardVo">
+		<![CDATA[
+		insert
+		  into board
+		values ( board_no_seq.nextval, #title#, #content#, #member_no#, #member_name#, sysdate )
+		]]>
+	</insert>
+
+	<delete id="delete" parameterClass="java.util.Map">
+		<![CDATA[
+		delete from board where no=#n#
+		]]>
+	</delete>
+
+	<update id="update" parameterClass="BoardVo">
+	<![CDATA[
+	update board set title=#title#, content=#content#, reg_date=sysdate where no=#no#
+	]]>
+	</update>
+	
+<resultMap class="BoardVo" id="resultMapList">
+		<result column="no" property="no" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="member_no" property="member_no" />
+		<result column="member_name" property="member_name" />
+		<result column="reg_date" property="reg_date" />
+
+	</resultMap>
+	<select id="list" resultMap="resultMapList">
+		<![CDATA[
+		select *
+		  from board
+		]]>
+	</select>
+	
+	<select id="read" resultClass="BoardVo" parameterClass="java.lang.Integer">
+		<![CDATA[
+		SELECT * FROM board where no=#value#
+		]]>  
+	</select>
+
+</sqlMap> 
