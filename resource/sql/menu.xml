@@ -6,7 +6,7 @@
 	<insert id="insert" parameterClass="MenuVo">
 		<![CDATA[
 		INSERT into product
-		VALUES(product_no_seq.nextval,#name#,#price#,#content#,#orderno#)
+		VALUES(product_no_seq.nextval,#name#,#price#,#content#,#orderno#,0)
 		]]>  
 	</insert>
 	
@@ -30,6 +30,7 @@
 		<![CDATA[
 		SELECT * 
 		FROM product
+		ORDER BY orderno asc
 		]]>  
 	</select>
 	

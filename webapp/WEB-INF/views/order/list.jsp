@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>mysite</title>
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/mycafe/assets/css/board.css" rel="stylesheet" type="text/css">
 </head>
@@ -18,21 +19,28 @@
 					<tr>
 						<th>상품명</th>
 						<th>가격</th>
-						<th>수량 조절</th>
 						<th>수량</th>
+						<th>더하기</th>
+						<th>빼기</th>
+						<th>합계</th>
 					</tr>
-					<c:forEach items="${list }" var = "vo" >				
+					<c:forEach items="${list }" var = "vo" >
 					<tr>
 						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
 						<td>${vo.price }</td>
-						<td>${vo.orderno }</td>
-						<td><a href="/mycafe/menu/delete?no=${vo.no }" class="del">상품삭제</a></td>
+						<td>${vo.quantity }</td>
+						<td><a href="/mycafe/order/plus?no=${vo.no }" >더하기</a></td>
+						<td><a href="/mycafe/order/minus?no=${vo.no }">빼기</a></td>
+						<td>${vo.price * vo.quantity }원</a></td>
 					</tr>
-					</c:forEach>										
+					</c:forEach>
+					<tr>
+						<td> 총합 : </td>
+					</tr>										
 				</table>
 				<div class="bottom">
 					<a href="/mycafe/order/buy" id="new-book"> 주문하기 </a>
-					<a href="/mycafe/order/index" id="new-book"> 주문초기화 </a>
+					<a href="/mycafe/order/refresh" id="new-book"> 주문초기화 </a>
 				</div>				
 			</div>
 		</div>

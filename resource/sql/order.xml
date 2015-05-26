@@ -7,8 +7,39 @@
 		<![CDATA[
 		SELECT * 
 		FROM product
+		ORDER BY orderno asc
 		]]>  
 	</select>
 	
+	<select id="view" resultClass="OrderVo" parameterClass = "java.lang.Integer">
+		<![CDATA[
+		SELECT * 
+		FROM product
+		WHERE no = #value#
+		]]>  
+	</select>
+	
+	<update id="refresh">
+		<![CDATA[
+		UPDATE product
+		SET quantity = 0
+		]]>  
+	</update>
+	
+	<update id="plus" parameterClass="OrderVo">
+		<![CDATA[
+		UPDATE product
+		SET quantity = #quantity# + 1
+		WHERE no = #no#
+		]]>  
+	</update>
+	
+	<update id="minus" parameterClass="OrderVo">
+		<![CDATA[
+		UPDATE product
+		SET quantity = #quantity# - 1
+		WHERE no = #no#
+		]]>  
+	</update>
 	
 </sqlMap> 

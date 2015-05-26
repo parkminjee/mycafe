@@ -18,4 +18,23 @@ public class OrderService {
 		return orderDao.fetch(); 
 	}
 	
+	public void refresh()
+	{
+		orderDao.refresh();
+	}
+	
+	public OrderVo view(int no)
+	{
+		return orderDao.view(no);
+	}
+	
+	public void plus(OrderVo vo)
+	{
+		orderDao.plus(vo);
+	}
+	public void minus(OrderVo vo)
+	{
+		orderDao.minus(vo);
+	}
+	
 }

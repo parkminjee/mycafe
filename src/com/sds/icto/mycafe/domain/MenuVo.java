@@ -7,7 +7,14 @@ public class MenuVo {
 	private int price;
 	private String content;
 	private int orderno;
+	private int quantity;
 	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public int getNo() {
 		return no;
 	}

@@ -7,7 +7,21 @@ public class OrderVo {
 	private int price;
 	private String content;
 	private int orderno;
+	private int quantity;
 	
+	@Override
+	public String toString() {
+		return "OrderVo [no=" + no + ", name=" + name + ", price=" + price
+				+ ", content=" + content + ", orderno=" + orderno
+				+ ", quantity=" + quantity + ", toString()=" + super.toString()
+				+ "]";
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public int getNo() {
 		return no;
 	}
@@ -38,7 +52,6 @@ public class OrderVo {
 	public void setOrderno(int orderno) {
 		this.orderno = orderno;
 	}
-	
 	
 	
 }
