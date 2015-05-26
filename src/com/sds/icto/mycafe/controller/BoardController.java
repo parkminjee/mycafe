@@ -44,7 +44,10 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
-	public String write(@ModelAttribute BoardVo vo) {
+	public String write(@ModelAttribute BoardVo vo, HttpSession session) {
+		MemberVo mvo = (MemberVo)session.getAttribute("authMember");
+		vo.setMember_no(mvo.getNo());
+		vo.setMember_name(mvo.getName());
 		boardService.insert(vo);
 		return "redirect:/board/list";
 	}

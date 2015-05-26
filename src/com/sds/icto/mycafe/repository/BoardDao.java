@@ -9,6 +9,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.sds.icto.mycafe.domain.BoardVo;
+import com.sds.icto.mycafe.domain.MemberVo;
 
 @Repository
 public class BoardDao {
@@ -20,7 +21,6 @@ public class BoardDao {
 	{
 		BoardVo vo1 = new BoardVo();
 		vo1 = (BoardVo) sqlMapClientTemplate.queryForObject("board.view",no);
-						
 		return vo1;
 	}
 	
