@@ -5,7 +5,7 @@
 <head>
 <title>mysite</title>
 
-<script type="text/javascript" src="/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
+<!-- <script type="text/javascript" src="/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
 <script>
 $( function() {
 	
@@ -55,7 +55,7 @@ $( function() {
 	});
 });
 </script>
-
+ -->
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -69,7 +69,7 @@ $( function() {
 		<div id="content">
 			<div id="user">
 
-				<form id="join-form" name="joinForm" method="post" action="/mysite3/member/join">
+				<form id="join-form" name="joinForm" method="post" action="/mycafe/member/join">
 					
 					<input type="hidden" name="a" value="join">
 					<label class="block-label" for="name">이름</label>
