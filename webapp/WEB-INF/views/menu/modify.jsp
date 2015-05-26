@@ -14,10 +14,10 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite3/board/update?no=${vo.no }">
+				<form class="board-form" method="post" action="/mycafe/menu/update?no=${update.no }">
 					<table class="tbl-ex">
 						<tr>
-							<th colspan="2">글수정</th>
+							<th colspan="2">상품수정</th>
 						</tr>
 						<tr>
 							<td class="label">상품명</td>
@@ -38,8 +38,8 @@
 					
 					</table>
 					<div class="bottom">
-						<a href="/mysite3/board/view?no=${vo.no }">취소</a>
-						<input type="submit" value="수정">
+						<a href="/mycafe/menu/view?no=${update.no }">수정취소</a>
+						<input type="submit" value="상품수정">
 					</div>
 				</form>				
 			</div>
