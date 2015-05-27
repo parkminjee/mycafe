@@ -8,39 +8,67 @@
 <script>
 	
 	$().ready(function () {
-	$("#emailchk").click(
-			function() {
-				var email = $("#email").val();
-				if(email==null || email==""){
-					alert("Email을 입력하세요.");
-					return;
-				}
-				$.ajax({
-					url : "/mycafe/member/checkEmail",
-					type : "post",
-					data : {
-						"email" : email
-					},
-					success : function( response ){
-				    	if( response.result == false  ) {
-				    		// 사용가능
-				    		//* $("#signUpMsgP").text(response.data); */
-				    		$("#emailchk").hide();
-				    		
-				    	} else { 
-				    		/* $("#signUpMsgP").text(response.data); */
-				    		alert(response.data);
-				       	}
-					},
-					error : function(request, status, error) {
-						alert("code:" + request.status + "\n" + "message:"
-								+ request.responseText + "\n" + "error:"
-								+ error);
-					},
-					dataType : "json"
-				});
+		$("#emailchk").click(
+		function() {
+			var email = $("#email").val();
+			if(email==null || email==""){
+				alert("Email을 입력하세요.");
+				return;
+			}
+			$.ajax({
+				url : "/mycafe/member/checkEmail",
+				type : "post",
+				data : {
+					"email" : email
+				},
+				success : function( response ){
+			    	if( response.result == false  ) {
+			    		// 사용가능
+			    		$("#emailchk").hide();
+			    		
+			    	} else { 
+			    		alert(response.data);
+			       	}
+				},
+				error : function(request, status, error) {
+					alert("code:" + request.status + "\n" + "message:"
+							+ request.responseText + "\n" + "error:"
+							+ error);
+				},
+				dataType : "json"
 			});
 		});
+		
+		$( "#join-form" ).submit( function() {
+			
+			if( $( "#emailchk" ).is( ":visible" ) == true ) {
+				alert( "이메일 중복 여부를 확인해 주세요." );
+				return false;
+			}
+			var name = $("#name").val();
+			if(name==null || name==""){
+				alert("이름을 입력하세요.");
+				return false;
+			}
+			var email = $("#email").val();
+			if(email==null || email==""){
+				alert("Email을 입력하세요.");
+				return false;
+			}
+			var password = $("#password").val();
+			if(password==null || password==""){
+				alert("비밀번호를 입력하세요.");
+				return false;
+			}
+			if($("#agree-prov").is(":checked") ==false)
+			{
+				alert("약관을 동의해 주세요.");
+				return false;
+			}
+		
+			return true;
+		});
+	});
 </script>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -65,7 +93,7 @@
 					<input id="emailchk" type="button" value="id 중복체크">
 					
 					<label class="block-label">패스워드</label>
-					<input name="password" type="password" value="">
+					<input id="password" name="password" type="password" value="">
 					
 					<fieldset>
 						<legend>약관동의</legend>
