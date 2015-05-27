@@ -36,5 +36,9 @@ public class OrderService {
 	{
 		orderDao.minus(vo);
 	}
+	public int total()
+	{
+		return orderDao.total();
+	}
 	
 }

@@ -38,7 +38,7 @@
 					</tr>
 					</c:forEach>
 					<tr>
-						<td> 총합 : </td>
+						<td> 총합 :  ${sum }원</td>
 					</tr>										
 				</table>
 				<div class="bottom">

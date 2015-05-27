@@ -27,6 +27,13 @@ public class OrderDao {
 		OrderVo vo = (OrderVo)sqlMapClientTemplate.queryForObject("order.view",no);
 		return vo;
 	}
+	
+	public int total() 
+	{
+		int total = (Integer)sqlMapClientTemplate.queryForObject("order.total");
+		return total;
+	}
+	
 	public void refresh()
 	{
 		sqlMapClientTemplate.update("order.refresh");
@@ -42,5 +49,5 @@ public class OrderDao {
 		sqlMapClientTemplate.update("order.minus",vo);
 	}
 	
-	
+		
 }

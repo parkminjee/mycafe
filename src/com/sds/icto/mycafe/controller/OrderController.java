@@ -30,6 +30,8 @@ public class OrderController {
 	{
 		List<OrderVo> list = orderService.list();
 		model.addAttribute("list",list);
+		int tot = orderService.total();
+		model.addAttribute("sum",tot);
 		return "order/list";
 	}
 	@RequestMapping("/refresh")
@@ -54,7 +56,8 @@ public class OrderController {
 	{
 		List<OrderVo> list = orderService.list();
 		model.addAttribute("list",list);
-		/*orderService.refresh();*/
+		int tot = orderService.total();
+		model.addAttribute("sum",tot);
 		return "order/result";
 	}
 	
