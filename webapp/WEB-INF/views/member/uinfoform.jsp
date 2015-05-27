@@ -25,9 +25,6 @@
 					<input type="hidden" name="no" value="${authMember.no }">
 					<label class="block-label" for="name">이름</label>
 					<input id="name" name="name" type="text" value="${authMember.name }">
-
-					<label class="block-label" for="email">이메일</label>
-					<input id="email" name="email" type="text" value="${authMember.email }">
 											
 					<label class="block-label">패스워드</label>
 					<input name="password" type="password" value="${authMember.password }">

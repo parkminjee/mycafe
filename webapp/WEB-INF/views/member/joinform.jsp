@@ -102,9 +102,6 @@
 					</fieldset>
 					
 					<input type="submit" value="가입하기">
-					
-					<c:if test="${param.result=='fail'}"> 오류 :  가입실패! 다시 입력하세요  </c:if>
-					
 				</form>
 			</div>
 		</div>

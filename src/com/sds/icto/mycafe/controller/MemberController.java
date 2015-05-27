@@ -31,11 +31,13 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(@ModelAttribute MemberVo vo) {
+	public String join(@ModelAttribute MemberVo vo, HttpSession session) {
 		memberService.joinUser(vo);
+		MemberVo memberVo = memberService.authUser(vo);
+		session.setAttribute("authMember", memberVo);
 		return "redirect:/index";
 	}
-
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "member/loginform";
