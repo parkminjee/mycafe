@@ -16,7 +16,7 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="/mycafe/image/coffeenie.jpg"  width = 350; align="middle">
+					<img id="profile" src="/mycafe/image/coffeenie.jpg"  width = 540; align="middle">
 					<h2>COFFEENIE</h2>
 					<p>
 						커피니입니다.<br>
