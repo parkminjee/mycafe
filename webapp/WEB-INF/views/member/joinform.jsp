@@ -29,8 +29,7 @@
 				    		
 				    	} else { 
 				    		/* $("#signUpMsgP").text(response.data); */
-				    		$("#emailchk").hide();
-						/* 	alert(response.data); */
+				    		alert(response.data);
 				       	}
 					},
 					error : function(request, status, error) {
