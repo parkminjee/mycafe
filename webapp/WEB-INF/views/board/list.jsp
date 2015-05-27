@@ -43,7 +43,7 @@
 					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<c:if test = "${not empty authMember.no }">
+					<c:if test = "${authMember.no == 1 }">
 						<a href="/mycafe/board/write" id="new-book">글쓰기</a>
 					</c:if>
 				</div>				
