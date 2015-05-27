@@ -34,6 +34,15 @@ public class OrderController {
 		model.addAttribute("sum",tot);
 		return "order/list";
 	}
+	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String viewForm(@RequestParam int no, Model model)
+	{
+		OrderVo view = orderService.view(no);
+		model.addAttribute("view",view);
+		return "order/view";
+	}
+	
 	@RequestMapping("/refresh")
 	public String refresh()
 	{

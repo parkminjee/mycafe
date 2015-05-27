@@ -17,7 +17,7 @@
 			<div id="board" class="board-form">
 				<table class="tbl-ex">
 					<tr>
-						<th colspan="2">글보기</th>
+						<th colspan="2">상품 상세정보</th>
 					</tr>
 					<tr>
 						<td class="label">상품명</td>

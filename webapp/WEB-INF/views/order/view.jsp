@@ -17,7 +17,7 @@
 			<div id="board" class="board-form">
 				<table class="tbl-ex">
 					<tr>
-						<th colspan="2">글보기</th>
+						<th colspan="2">상품 상세정보</th>
 					</tr>
 					<tr>
 						<td class="label">상품명</td>
@@ -35,17 +35,9 @@
 						<td class="label">설명</td>
 						<td>${view.content }</td>
 					</tr>
-					<tr>
-						<td class="label">우선순위</td>
-						<td>${view.orderno }</td>
-					</tr>
-					
 				</table>
 				<div class="bottom">
-					<a href="/mycafe/menu/index">상품목록</a>
-					<c:if test="${vo.member_no==authMember.no }">
-						<a href="/mycafe/menu/update?no=${view.no }">상품수정</a>
-					</c:if>
+					<a href="/mycafe/order/index">주문페이지로</a>
 				</div>
 			</div>
 		</div>

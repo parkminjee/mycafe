@@ -29,9 +29,11 @@
 					</tr>
 					<c:forEach items="${list }" var = "vo" >
 					<tr>
-						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
+						<td><a href="/mycafe/order/view?no=${vo.no }">${vo.name }</a></td>
 						<td>${vo.price }원</td>
 						<td>${vo.quantity }잔</td>
+					
+						
 						<td><a href="/mycafe/order/plus?no=${vo.no }"><img src="/mycafe/assets/css/images/add.png" width = 30 alt = "더하기"/></a></td>
 						<td><a href="/mycafe/order/minus?no=${vo.no }"><img src="/mycafe/assets/css/images/sub.png" width = 30 alt = "빼기"/></a></td>
 						<td>${vo.price * vo.quantity }원</a></td>
