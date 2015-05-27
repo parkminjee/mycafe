@@ -34,7 +34,7 @@
 						<tr>
 							<td><img src="/mycafe/assets/css/images/${vo.orderno }.gif"
 								/ width=40></td>
-							<td><a href="/mycafe/order/view?no=${vo.no }">${vo.name }</a></td>
+							<td><a href="/mycafe/order/view?no=${vo.no }"  onclick = "window.open(this.href,'','width=700, height=650');return false;">${vo.name }</a></td>
 							<td>${vo.price }원</td>
 							<td>${vo.quantity }잔</td>
 

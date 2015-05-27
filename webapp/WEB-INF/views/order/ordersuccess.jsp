@@ -22,7 +22,7 @@ myFunction();
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="/mycafe/image/final.png"  width = 350; align="middle">
+					<img id="profile" src="/mycafe/image/final.png"  width = 540; align="middle">
 					<h2>COFFEENIE</h2>
 					<p>
 						이용해주셔서 감사합니다.<br>

@@ -10,9 +10,6 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<c:import url="/WEB-INF/views/include/header.jsp" />
-		</div>
 		<div id="content">
 			<div id="board" class="board-form">
 				<table class="tbl-ex">
@@ -41,17 +38,9 @@
 						<td>${view.content }</td>
 					</tr>
 				</table>
-				<div class="bottom">
-					<a href="/mycafe/order/index">주문페이지로</a>
-				</div>
 			</div>
 		</div>
-		<div id="navigation">
-			<c:import url="/WEB-INF/views/include/navigation.jsp" />
-		</div>
-		<div id="footer">
-			<c:import url="/WEB-INF/views/include/footer.jsp" />
-		</div>
+		
 	</div>
 </body>
 </html>
