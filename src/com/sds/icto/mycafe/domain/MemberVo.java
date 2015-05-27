@@ -6,6 +6,7 @@ public class MemberVo {
 	private String name;
 	private String email;
 	private String password;
+	private int orderprice;
 	private String joindate;
 	
 	public int getNo() {
@@ -31,6 +32,12 @@ public class MemberVo {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public int getOrderprice() {
+		return orderprice;
+	}
+	public void setOrderprice(int orderprice) {
+		this.orderprice = orderprice;
 	}
 	public String getJoindate() {
 		return joindate;

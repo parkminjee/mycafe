@@ -21,4 +21,8 @@ public class MemberDao {
 		MemberVo vo1 = (MemberVo)sqlMapClientTemplate.queryForObject("member.login",vo);
 		return vo1;
 	}
+	
+	public void editMember(MemberVo vo){
+		sqlMapClientTemplate.update("member.update", vo);
+	}
 }

@@ -4,10 +4,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sds.icto.mycafe.domain.BoardVo;
 import com.sds.icto.mycafe.domain.MemberVo;
 import com.sds.icto.mycafe.service.MemberService;
 
@@ -54,4 +57,17 @@ public class MemberController {
 		session.invalidate();
 		return "redirect:/index";
 	}
+	
+	@RequestMapping(value="/uinfo", method = RequestMethod.GET)
+	public String uinfoForm(){
+		return "member/uinfoform";
+	}
+	
+	@RequestMapping(value="/uinfo", method = RequestMethod.POST)
+	public String uinfo(@ModelAttribute MemberVo vo,HttpSession session){
+		memberService.updateUser(vo);
+		logout(session);
+		return "redirect:/index";
+	}
+	
 }

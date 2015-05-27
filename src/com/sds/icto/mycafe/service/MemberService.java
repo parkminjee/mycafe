@@ -21,4 +21,8 @@ public class MemberService {
 			MemberVo memberVo = memberDao.getMember(vo);
 			return memberVo;
 		}
+		
+		public void updateUser(MemberVo vo){
+			memberDao.editMember(vo);
+		}
 }
