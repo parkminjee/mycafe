@@ -34,7 +34,7 @@
 							<td><input type="text" name="content" value=""></td>
 						</tr>
 						<tr>
-							<td class="label">우선순위</td>
+							<td class="label">우선순위/파일명</td>
 							<td><input type="text" name="orderno" value=""></td>
 						</tr>
 						

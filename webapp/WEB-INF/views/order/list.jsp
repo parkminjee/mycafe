@@ -20,6 +20,7 @@
 						<td> 메뉴 </td>
 					</tr>
 					<tr>
+						<th>사진</th>
 						<th>상품명</th>
 						<th>가격</th>
 						<th>수량</th>
@@ -29,6 +30,7 @@
 					</tr>
 					<c:forEach items="${list }" var = "vo" >
 					<tr>
+						<td><img src="/mycafe/assets/css/images/${vo.orderno }.gif"/ width = 40></td>
 						<td><a href="/mycafe/order/view?no=${vo.no }">${vo.name }</a></td>
 						<td>${vo.price }원</td>
 						<td>${vo.quantity }잔</td>
