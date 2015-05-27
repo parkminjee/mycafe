@@ -9,7 +9,6 @@
 	<h1><a href="/mycafe/index">COFFEENIE</a></h1>
 	<ul>
 	
-		${sessionScope.authMember.name }
 		<br>
 	
 	<c:if test="${empty authMember}">
@@ -19,7 +18,7 @@
 	<c:if test="${!empty authMember}">
 		<li><a href="/mycafe/member/uinfo">회원정보수정</a></li>
 		<li><a href="/mycafe/member/logout">로그아웃</a></li>
-		<li>${sessionScope.authMember.name}님 안녕하세요 ^^;</li>
+		<li>${sessionScope.authMember.name}님 JAVA한사발 하시죠^^</li>
 	</c:if> 
 
 	</ul>
