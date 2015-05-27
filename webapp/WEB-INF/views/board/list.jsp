@@ -35,7 +35,7 @@
 						<td>${vo.viewcnt }</td>
 						<td>${vo.regdate }</td>
 						<td>
-							<c:if test = "${!empty authMember.no }">
+							<c:if test = "${authMember.no == 1 }">
 								<a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>
