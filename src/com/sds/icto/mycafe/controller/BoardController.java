@@ -55,10 +55,6 @@ public class BoardController {
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(@ModelAttribute BoardVo vo, @RequestParam int no,
 			HttpSession session) {
-		// MemberVo mem_vo = (MemberVo)session.getAttribute("authMember");
-		// vo.setNo(no);
-		// vo.setMember_no(mem_vo.getNo());
-
 		boardService.delete(vo);
 		return "redirect:/board/list";
 	}

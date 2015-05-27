@@ -7,7 +7,7 @@
 	<delete id="delete" parameterClass="BoardVo">
 		<![CDATA[
 			DELETE FROM board
-			WHERE no=#no# AND member_no=#member_no#
+			WHERE no=#no#
 		]]>
 	</delete>
 

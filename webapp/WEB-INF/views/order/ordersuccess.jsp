@@ -6,6 +6,12 @@
 <title>COFFEENIE</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="/mycafe/assets/css/main.css" rel="stylesheet" type="text/css">
+<script>
+function myFunction(){
+	alert("주문이 완료되었습니다. 이용해주셔서 감사합니다.");
+}
+myFunction();
+</script>
 </head>
 <body>
 	<div id="container">
@@ -16,7 +22,7 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="/mycafe/image/coffeenie.jpg"  width = 350; align="middle">
+					<img id="profile" src="/mycafe/image/final.png"  width = 350; align="middle">
 					<h2>COFFEENIE</h2>
 					<p>
 						이용해주셔서 감사합니다.<br>
