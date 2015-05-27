@@ -37,7 +37,14 @@
 					
 						
 						<td><a href="/mycafe/order/plus?no=${vo.no }"><img src="/mycafe/assets/css/images/add.png" width = 30 alt = "더하기"/></a></td>
-						<td><a href="/mycafe/order/minus?no=${vo.no }"><img src="/mycafe/assets/css/images/sub.png" width = 30 alt = "빼기"/></a></td>
+						<c:choose>
+							<c:when test="${vo.quantity>=1 }">
+								<td><a href="/mycafe/order/minus?no=${vo.no }"><img src="/mycafe/assets/css/images/sub.png" width = 30 alt = "빼기"/></a></td>
+							</c:when>
+							<c:otherwise>
+								<td><a href=""><img src="/mycafe/assets/css/images/sub.png" width = 30 alt = "빼기"/></a></td>
+							</c:otherwise>
+						</c:choose>
 						<td>${vo.price * vo.quantity }원</a></td>
 					</tr>
 					</c:forEach>
