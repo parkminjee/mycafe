@@ -37,4 +37,13 @@
 		]]>  	
 	</update>
 	
+	<select id="check" resultClass = "MemberVo">
+		<![CDATA[
+			select * 
+			  from member
+			where email=#email#
+		]]>
+	</select>
+	
+	
 </sqlMap> 

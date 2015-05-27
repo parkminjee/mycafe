@@ -25,4 +25,17 @@ public class MemberDao {
 	public void editMember(MemberVo vo){
 		sqlMapClientTemplate.update("member.update", vo);
 	}
+	
+	public boolean checkEmail(String email) 
+	{
+		MemberVo memberVo = null;
+		memberVo = (MemberVo)sqlMapClientTemplate.queryForObject("member.check",email);
+		if(memberVo==null){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	
 }

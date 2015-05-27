@@ -25,4 +25,9 @@ public class MemberService {
 		public void updateUser(MemberVo vo){
 			memberDao.editMember(vo);
 		}
+		
+		public boolean checkEmail(String email) {
+			return memberDao.checkEmail(email);
+		}
+
 }

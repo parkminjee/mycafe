@@ -4,59 +4,45 @@
 <html>
 <head>
 <title>COFFEENIE</title>
-
-<!-- <script type="text/javascript" src="/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript" src="/mycafe/assets/js/jquery/jquery-1.9.0.js"></script>
 <script>
-$( function() {
 	
-	$( "#join-form" ).submit( function() {
-		if( $( "#email-checked" ).is( ":visible" ) == false ) {
-			alert( "이메일 중복 여부를 확인 해 주세요." );
-			return false;
-		}
-		
-		return false;
-	});
-	
-	/* $( "#email" ).change( function() {
-		$( "#check-email" ).show();
-		$( "#email-checked" ).hide();
-	});
-	 */
-	$( "#check-email" ).click( function() {
-		var email = $( "#email" ).val();
-		if( email == "" ) {
-			alert( "이메일이 비어 있습니다." );
-			return;
-		}
-		
-		var postData = "email=" +  email;
-		  $.ajax( {
-			    url : "/mysite3/member/api/checkEmail",
-			    type: "post",
-//			    dataType: "json",
-			    data: postData,
-//			    contentType: "application/json",
-			    success: function( response ){
-			    	/* if( response.result == false  ) {
-			    		// 사용가능
-			    		$( "#check-email" ).hide();
-			    		$( "#email-checked" ).show();
-			    	} else {
-			    		alert( response.data );
-			    	} */
-			    	console.log( response );
-			    },
-			    error: function( jqXHR, status, e ){
-			       console.error( status + " : " + e );
-			    }
-
-			   });
-	});
-});
+	$().ready(function () {
+	$("#emailchk").click(
+			function() {
+				var email = $("#email").val();
+				if(email==null || email==""){
+					alert("Email을 입력하세요.");
+					return;
+				}
+				$.ajax({
+					url : "/mycafe/member/checkEmail",
+					type : "post",
+					data : {
+						"email" : email
+					},
+					success : function( response ){
+				    	if( response.result == false  ) {
+				    		// 사용가능
+				    		//* $("#signUpMsgP").text(response.data); */
+				    		$("#emailchk").hide();
+				    		
+				    	} else { 
+				    		/* $("#signUpMsgP").text(response.data); */
+				    		$("#emailchk").hide();
+						/* 	alert(response.data); */
+				       	}
+					},
+					error : function(request, status, error) {
+						alert("code:" + request.status + "\n" + "message:"
+								+ request.responseText + "\n" + "error:"
+								+ error);
+					},
+					dataType : "json"
+				});
+			});
+		});
 </script>
- -->
-
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <link href="/mycafe/assets/css/user.css" rel="stylesheet" type="text/css">
@@ -77,7 +63,7 @@ $( function() {
 
 					<label class="block-label" for="email">이메일</label>
 					<input id="email" name="email" type="text" value="">
-					<input type="button" value="id 중복체크">
+					<input id="emailchk" type="button" value="id 중복체크">
 					
 					<label class="block-label">패스워드</label>
 					<input name="password" type="password" value="">
