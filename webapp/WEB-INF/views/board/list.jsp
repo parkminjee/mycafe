@@ -35,7 +35,7 @@
 						<td>${vo.viewcnt }</td>
 						<td>${vo.regdate }</td>
 						<td>
-							<c:if test = "${!empty authMember.no }">
+							<c:if test = "${authMember.no == 1 }">
 								<a href="/mycafe/board/delete?no=${vo.no }" class="del">삭제</a>
 							</c:if>
 						</td>
@@ -43,7 +43,7 @@
 					</c:forEach>										
 				</table>
 				<div class="bottom">
-					<c:if test = "${not empty authMember.no }">
+					<c:if test = "${authMember.no == 1 }">
 						<a href="/mycafe/board/write" id="new-book">글쓰기</a>
 					</c:if>
 				</div>				
