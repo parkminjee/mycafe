@@ -18,7 +18,7 @@ input[type="text"]	{
 input[type="submit"] {
 	padding:5px; 
 	border:1px solid #aaa;
-	background-color: #aaa;
+	background-color: #5987c5;
 	font-weight:bold;
 	color:#fff;
 }
@@ -48,14 +48,14 @@ input#kwd	{
 .tbl-ex th	{ 
 	border-top:2px solid #333;
 	border-bottom:2px solid #333; 
-	background-color:#999; 
+	background-color: #5987c5; 
 	font-size:1.1em; 
 	color:#fff 
 }
 
 .tbl-ex td {
-	border-top:1px dotted #333;
-	border-bottom:1px dotted #333; 
+	border-top:1px dotted #c0bfbd;
+	border-bottom:1px dotted #c0bfbd; 
 }
 
 .board-form .tbl-ex td {
