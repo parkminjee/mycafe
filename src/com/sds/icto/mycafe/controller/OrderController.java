@@ -58,7 +58,7 @@ public class OrderController {
 	public String ultorder()
 	{
 		orderService.refresh();
-		return "redirect:/index";
+		return "order/ordersuccess";
 	}
 	@RequestMapping("/buy")
 	public String buy(Model model)
