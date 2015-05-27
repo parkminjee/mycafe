@@ -20,6 +20,11 @@
 						<th colspan="2">상품 상세정보</th>
 					</tr>
 					<tr>
+						<td class="label">사진</td>
+						<td><img src="/mycafe/assets/css/images/${view.orderno }.gif"/ width = 400></td>
+					</tr>
+					<tr>
+					<tr>
 						<td class="label">상품명</td>
 						<td>${view.name }</td>
 					</tr>

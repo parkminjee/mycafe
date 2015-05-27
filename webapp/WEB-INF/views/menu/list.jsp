@@ -16,13 +16,15 @@
 			<div id="board">
 				<table class="tbl-ex">
 					<tr>
+						<th>사진</th>
 						<th>상품명</th>
 						<th>가격</th>
-						<th>우선순위</th>
+						<th>우선순위/파일명</th>
 						<th>&nbsp;</th>
 					</tr>
 					<c:forEach items="${list }" var = "vo" >				
 					<tr>
+						<td><img src="/mycafe/assets/css/images/${vo.orderno }.gif"/ width = 40></td>
 						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
 						<td>${vo.price }</td>
 						<td>${vo.orderno }</td>
