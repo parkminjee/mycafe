@@ -1,6 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+	pageContext.setAttribute("newLineChar", "\n");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +29,8 @@
 					</tr>
 					<tr>
 						<td class="label">내용</td>
-						<td>
-							<div class="view-content">
-							${view.content }
-								</div>
-						</td>
+						<td><div class="view-content">${fn:replace( view.content, newLineChar, "<br>" ) }</div></td>
+						
 					</tr>
 				</table>
 				<div class="bottom">
