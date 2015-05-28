@@ -54,16 +54,21 @@ input#kwd	{
 }
 
 .tbl-ex td {
-	border-top:1px dotted #c0bfbd;
-	border-bottom:1px dotted #c0bfbd; 
+	border-top:1px solid #c0bfbd;
+	border-bottom:1px solid #c0bfbd; 
+
+}
+
+.tbl-ex .view-form{
+	border-right:1px solid #c0bfbd; 
 }
 
 .board-form .tbl-ex td {
-	text-align:left
+	text-align:center;
 }
 
 .board-form .tbl-ex td.label {
-	text-align:right;
+	text-align:center;
 	font-weight:bold; 
 }
 
@@ -133,3 +138,4 @@ a.del	{
 }
 
 .tbl-ex a:visited	{ color:#5987c5; text-decoration:none; }
+

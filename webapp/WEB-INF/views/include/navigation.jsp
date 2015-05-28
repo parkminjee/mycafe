@@ -4,7 +4,14 @@
 <ul>
 	<li class="selected">COFFEENIE CAFE</li>
 	<li><a href="/mycafe/board/list">공지사항</a></li>
+	<c:choose>
+	<c:when test="${!empty authMember }">
 	<li><a href="/mycafe/order/refresh">주문하기</a></li>
+	</c:when>
+	<c:otherwise>
+	<li><a href="/mycafe/order/refresh">주문하기</a></li>
+	</c:otherwise>
+	</c:choose>
 	<c:if test="${authMember.no == 1 }">
 		<li class="selected">관리자메뉴</li>
 		<li><a href="/mycafe/menu/index">메뉴추가</a></li>

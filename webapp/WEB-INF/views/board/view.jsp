@@ -20,18 +20,26 @@
 		<div id="content">
 			<div id="board" class="board-form">
 				<table class="tbl-ex">
+				
+					
 					<tr>
-						<th colspan="2">글보기</th>
+						<th colspan="4">글보기</th>
 					</tr>
 					<tr>
-						<td class="label">제목</td>
-						<td>${view.title }</td>
-					</tr>
-					<tr>
-						<td class="label">내용</td>
-						<td><div class="view-content">${fn:replace( view.content, newLineChar, "<br>" ) }</div></td>
-						
-					</tr>
+								<td class="view-form">제목</td>
+								<td colspan=3>${view.title }</td>
+							</tr>
+							<tr>
+								<td class="view-form">이름</td>
+								<td class="view-form">${view.member_name }</td>
+								<td class="view-form">작성일</td>
+								<td>${view.regdate }</td>
+							</tr>
+							<tr>
+								<td colspan=4>${fn:replace( view.content, newLineChar, "<br>" ) }</td>
+							</tr>
+							
+					
 				</table>
 				<div class="bottom">
 					<a href="/mycafe/board/list">글목록</a>
