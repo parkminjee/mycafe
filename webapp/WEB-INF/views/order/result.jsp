@@ -42,7 +42,7 @@
 					</tr>										
 				</table>
 				<div class="bottom">
-					<a href="/mycafe/order/ultorder" id="new-book"> 최종결제 </a>
+					<a href="/mycafe/order/ultorder?sum=${sum }&no=${no}" id="new-book"> 최종결제 </a>
 					<a href="/mycafe/order/reorder" id="new-book"> 주문다시하기 </a>
 				</div>				
 			</div>

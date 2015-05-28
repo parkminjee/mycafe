@@ -19,6 +19,23 @@
 		]]>  
 	</select>
 	
+	<select id="getmileage" resultClass="java.lang.Integer" parameterClass =
+	"java.lang.Integer">
+		<![CDATA[
+		SELECT orderprice 
+		FROM member
+		WHERE no=#value#
+		]]>  
+	</select>
+	
+	<update id="addmileage" parameterClass="java.util.HashMap">
+		<![CDATA[
+	  		UPDATE member
+	  		SET orderprice = #orderprice# + #price#
+	  		WHERE no=#no#
+	  	]]>
+	</update>
+	
 	<select id="view" resultClass="OrderVo" parameterClass = "java.lang.Integer">
 		<![CDATA[
 		SELECT * 

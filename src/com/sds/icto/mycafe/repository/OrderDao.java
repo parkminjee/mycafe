@@ -2,6 +2,7 @@ package com.sds.icto.mycafe.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
@@ -49,5 +50,14 @@ public class OrderDao {
 		sqlMapClientTemplate.update("order.minus",vo);
 	}
 	
-		
+	public int getMileage(int no)
+	{
+		return (Integer)sqlMapClientTemplate.queryForObject("order.getmileage",no);
+	}
+	
+	public void addMileage(Map map)
+	{
+		sqlMapClientTemplate.update("order.addmileage",map);
+	}
+	
 }

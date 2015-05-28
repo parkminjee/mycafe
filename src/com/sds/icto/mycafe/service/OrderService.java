@@ -1,6 +1,7 @@
 package com.sds.icto.mycafe.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,5 +42,12 @@ public class OrderService {
 	{
 		return orderDao.total();
 	}
-	
+	public void addMileage(Map map)
+	{
+		orderDao.addMileage(map);
+	}
+	public int getMileage(int no)
+	{
+		return orderDao.getMileage(no);
+	}
 }
