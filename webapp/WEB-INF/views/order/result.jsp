@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,14 +32,14 @@
 						<c:if test="${vo.quantity>0 }">
 							<td><img src="/mycafe/assets/css/images/${vo.orderno }.gif"/ width = 40></td>
 							<td><a href="/mycafe/order/view?no=${vo.no }" onclick = "window.open(this.href,'','width=700, height=650');return false;">${vo.name }</a></td>
-							<td>${vo.price }원</td>
+							<td><fmt:formatNumber value="${vo.price }" type="number"/> 원</td>
 							<td>${vo.quantity }잔</td>
-							<td>${vo.price * vo.quantity }원</a></td>
+							<td><fmt:formatNumber value="${vo.price * vo.quantity }" type="number"/> 원</a></td>
 						</c:if>
 					</tr>
 					</c:forEach>
 					<tr>
-						<td> 총합 :  ${sum }원</td>
+						<td> 총합 :<fmt:formatNumber value="${sum }" type="number"/> 원</td>
 					</tr>										
 				</table>
 				<div class="bottom">

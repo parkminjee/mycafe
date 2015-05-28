@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +27,7 @@
 					<tr>
 						<td><img src="/mycafe/assets/css/images/${vo.orderno }.gif"/ width = 40></td>
 						<td><a href="/mycafe/menu/view?no=${vo.no }">${vo.name }</a></td>
-						<td>${vo.price }</td>
+						<td><fmt:formatNumber value="${vo.price }" type="number"/> 원</td>
 						<td>${vo.orderno }</td>
 						<td><a href="/mycafe/menu/delete?no=${vo.no }" class="del">상품삭제</a></td>
 					</tr>
