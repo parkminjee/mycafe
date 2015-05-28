@@ -39,7 +39,9 @@
 					</tr>
 					</c:forEach>
 					<tr>
-						<td>총 매출액 : ${sum }원</td>
+					<td></td>
+					<td>총매출액 :</td>
+						<td> ${sum }원</td>
 					</tr>										
 				</table>
 			</div>
