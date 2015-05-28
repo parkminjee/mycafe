@@ -57,6 +57,12 @@ public class MemberDao {
 			return true;
 		}
 	}
+	
+	public int total() 
+	{
+		int total = (Integer)sqlMapClientTemplate.queryForObject("member.total");
+		return total;
+	}
 
 	
 }

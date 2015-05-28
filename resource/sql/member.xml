@@ -75,5 +75,11 @@
 		]]>
 	</select>
 	
+	<select id="total" resultClass = "java.lang.Integer">
+	<![CDATA[
+			select sum(orderprice) from member
+		]]>
+	</select>
+	
 	
 </sqlMap> 

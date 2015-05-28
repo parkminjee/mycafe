@@ -31,4 +31,7 @@ public class AdminService {
 	{
 		memberDao.DeleteMember(no);
 	}
+	public int total(){
+		return memberDao.total();
+	}
 }

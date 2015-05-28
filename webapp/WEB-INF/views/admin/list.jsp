@@ -37,7 +37,10 @@
 						<td>${vo.joindate }</td>
 						<td><a href="/mycafe/admin/delete?no=${vo.no }" class="del">회원삭제</a></td>
 					</tr>
-					</c:forEach>										
+					</c:forEach>
+					<tr>
+						<td>총 매출액 : ${sum }원</td>
+					</tr>										
 				</table>
 			</div>
 		</div>

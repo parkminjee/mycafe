@@ -25,6 +25,8 @@ public class AdminController {
 	{
 		List<MemberVo> list = adminService.list();
 		model.addAttribute("list",list);
+		int tot=adminService.total();
+		model.addAttribute("sum",tot);
 		return "admin/list";
 	}
 	
@@ -51,5 +53,6 @@ public class AdminController {
 		adminService.delete(no);
 		return "redirect:/admin/index";
 	}
-		
+	
+	
 }
