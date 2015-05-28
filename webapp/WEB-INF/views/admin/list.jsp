@@ -41,7 +41,7 @@
 					<tr>
 					<td></td>
 					<td>총매출액 :</td>
-						<td> ${sum }원</td>
+						<td> <fmt:formatNumber value="${sum }" type="number"/>원</td>
 					</tr>										
 				</table>
 			</div>
