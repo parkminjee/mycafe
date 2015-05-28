@@ -9,6 +9,13 @@ public class MemberVo {
 	private int orderprice;
 	private String joindate;
 	
+	@Override
+	public String toString() {
+		return "MemberVo [no=" + no + ", name=" + name + ", email=" + email
+				+ ", password=" + password + ", orderprice=" + orderprice
+				+ ", joindate=" + joindate + ", toString()=" + super.toString()
+				+ "]";
+	}
 	public int getNo() {
 		return no;
 	}

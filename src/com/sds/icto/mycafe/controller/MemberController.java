@@ -71,6 +71,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/uinfo", method = RequestMethod.POST)
 	public String uinfo(@ModelAttribute MemberVo vo,HttpSession session){
+		System.out.println(vo.toString());
 		memberService.updateUser(vo);
 		logout(session);
 		return "redirect:/index";

@@ -10,16 +10,31 @@
 		<result column="orderprice" property="orderprice"/>
 		<result column="joindate" property="joindate"/>
 	</resultMap>
-	
+
 	<insert id="join" parameterClass="MemberVo">
 		<![CDATA[
 		insert into member values(member_no_seq.nextval,#name#,#email#,#password#,0,sysdate)
 		]]>  
 	</insert>
-
 	
-
-
+	<select id="list" resultClass="MemberVo">
+		<![CDATA[
+			SELECT *
+			FROM member
+			ORDER BY no asc
+		]]>
+	</select>
+	
+	<select id="find" resultClass="MemberVo" parameterClass = "java.lang.Integer">
+		<![CDATA[
+			SELECT *
+			FROM member
+			WHERE no=#value#
+		]]>
+	</select>
+	
+	
+	
 	<select id="login" resultClass="MemberVo" parameterClass="MemberVo">
 		<![CDATA[
 		SELECT * FROM MEMBER where email=#email# and password =#password#
@@ -29,10 +44,25 @@
 	</select>
 	
 	
+	<delete id="delete" parameterClass="java.lang.Integer">
+		<![CDATA[
+			DELETE member
+			WHERE no = #no#
+		]]>  	
+	</delete>
+	
 	<update id="update" parameterClass="MemberVo">
 		<![CDATA[
 			UPDATE member
-			SET name=#name#,email=#email#, password=#password#
+			SET name=#name#, password=#password#
+			WHERE no = #no#
+		]]>  	
+	</update>
+	
+	<update id="update2" parameterClass="MemberVo">
+		<![CDATA[
+			UPDATE member
+			SET name=#name#, email=#email#, password=#password#, orderprice=#orderprice#, joindate=#joindate# 
 			WHERE no = #no#
 		]]>  	
 	</update>
